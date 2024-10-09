@@ -1,43 +1,16 @@
 package org.example;
 
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(name = "usuario")
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = { "id", "nombre", "titular", "aforo", "tipoCaseta" })
+@XmlRootElement
 public class CasetaFeria {
-
-    @XmlAttribute(name = "id")
     private int id;
-
-    @XmlElement(name = "nombre")
     private String nombre;
-
-    @XmlElement(name = "titular")
     private String titular;
-
-    @XmlElement(name = "aforo")
     private int aforo;
-
-    @XmlElement(name = "tipoCaseta")
     private String tipoCaseta;
 
-    public CasetaFeria() {}
-
-
-    public CasetaFeria(int id, String nombre, String titular, int aforo, String tipoCaseta) {
-        this.id = id;
-        this.nombre = nombre;
-        this.titular = titular;
-        this.aforo = aforo;
-        this.tipoCaseta = tipoCaseta;
-    }
-
+    // Getters y Setters
     public int getId() {
         return id;
     }
@@ -76,5 +49,16 @@ public class CasetaFeria {
 
     public void setTipoCaseta(String tipoCaseta) {
         this.tipoCaseta = tipoCaseta;
+    }
+
+    @Override
+    public String toString() {
+        return "CasetaFeria{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", titular='" + titular + '\'' +
+                ", aforo=" + aforo +
+                ", tipoCaseta='" + tipoCaseta + '\'' +
+                '}';
     }
 }
