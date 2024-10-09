@@ -1,4 +1,4 @@
-package org.example;
+package org.feriapp;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         CasetaFeriaManager manager = new CasetaFeriaManager();
-        manager.loadCasetasFromFile("casetas.txt");
+        manager.loadCasetasFromFile("C:\\Users\\tarde\\IdeaProjects\\FeriaApp\\src\\main\\java\\org\\feriapp\\casetas.txt");
 
         while (true) {
             System.out.println("Menú:");

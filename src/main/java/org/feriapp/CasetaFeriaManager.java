@@ -1,4 +1,4 @@
-package org.example;
+package org.feriapp;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -52,15 +52,19 @@ public class CasetaFeriaManager {
 
     public void loadCasetasFromFile(String filePath) {
         try (Scanner scanner = new Scanner(new File(filePath))) {
+            int id = 1; // Empezamos el ID en 1
             while (scanner.hasNextLine()) {
-                String[] data = scanner.nextLine().split(",");
-                CasetaFeria caseta = new CasetaFeria();
-                caseta.setId(Integer.parseInt(data[0].trim()));
-                caseta.setNombre(data[1].trim());
-                caseta.setTitular(data[2].trim());
-                caseta.setAforo(Integer.parseInt(data[3].trim()));
-                caseta.setTipoCaseta(data[4].trim());
-                casetas.add(caseta);
+                String line = scanner.nextLine();
+                String[] data = line.split(" - ");
+                if (data.length == 4) { // Verificamos que haya 4 elementos
+                    CasetaFeria caseta = new CasetaFeria();
+                    caseta.setId(id++);
+                    caseta.setNombre(data[0].trim());
+                    caseta.setTitular(data[1].trim());
+                    caseta.setAforo(Integer.parseInt(data[2].trim()));
+                    caseta.setTipoCaseta(data[3].trim());
+                    casetas.add(caseta);
+                }
             }
             System.out.println("Casetas cargadas desde el archivo de texto.");
         } catch (IOException e) {

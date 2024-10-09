@@ -1,4 +1,4 @@
-package org.example;
+package org.feriapp;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
