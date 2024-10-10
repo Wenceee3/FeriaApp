@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         CasetaFeriaManager manager = new CasetaFeriaManager();
-        manager.loadCasetasFromFile("C:\\Users\\tarde\\IdeaProjects\\FeriaApp\\src\\main\\java\\org\\feriapp\\casetas.txt");
+        manager.cargarCasetasDelArchivo("C:\\Users\\tarde\\IdeaProjects\\FeriaApp\\src\\main\\java\\org\\feriapp\\casetas.txt");
 
         while (true) {
             System.out.println("Menú:");
@@ -23,6 +23,7 @@ public class Main {
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
+                    // Marshalling casetas a XML
                     try {
                         manager.marshallingToXML("casetas.xml");
                     } catch (JAXBException e) {
@@ -30,6 +31,7 @@ public class Main {
                     }
                     break;
                 case 2:
+                    // Unmarshalling casetas de XML
                     try {
                         manager.unmarshallingFromXML("casetas.xml");
                     } catch (JAXBException e) {
@@ -37,6 +39,7 @@ public class Main {
                     }
                     break;
                 case 3:
+                    // Mostrar la caseta número X
                     System.out.print("Introduce el ID de la caseta: ");
                     int idToShow = scanner.nextInt();
                     CasetaFeria casetaToShow = manager.getCasetaById(idToShow);
@@ -47,6 +50,7 @@ public class Main {
                     }
                     break;
                 case 4:
+                    // Marshalling casetas a JSON
                     try {
                         manager.marshallingToJSON("casetas.json");
                     } catch (IOException e) {
@@ -54,6 +58,7 @@ public class Main {
                     }
                     break;
                 case 5:
+                    // Unmarshalling casetas de JSON
                     try {
                         manager.unmarshallingFromJSON("casetas.json");
                     } catch (IOException e) {
@@ -61,6 +66,7 @@ public class Main {
                     }
                     break;
                 case 6:
+                    // Mostrar la caseta número X desde JSON
                     System.out.print("Introduce el ID de la caseta: ");
                     int idToShowJSON = scanner.nextInt();
                     CasetaFeria casetaToShowJSON = manager.getCasetaById(idToShowJSON);
@@ -71,6 +77,7 @@ public class Main {
                     }
                     break;
                 case 7:
+                    // Salir
                     System.out.println("Saliendo...");
                     return;
                 default:

@@ -1,14 +1,34 @@
 package org.feriapp;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement
+@XmlRootElement(name = "caseta")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = { "nombre", "titular", "aforo", "tipoCaseta" })
 public class CasetaFeria {
+
+    @XmlAttribute(name = "id")
     private int id;
+
+    @XmlElement(name = "nombre")
     private String nombre;
+
+    @XmlElement(name = "titular")
     private String titular;
+
+    @XmlElement(name = "aforo")
     private int aforo;
+
+    @XmlElement(name = "tipoCaseta")
     private String tipoCaseta;
+
+    // Constructor por defecto
+    public CasetaFeria() {}
 
     // Getters y Setters
     public int getId() {

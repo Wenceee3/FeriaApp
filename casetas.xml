@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<casetaFeria>
-    <aforo>170</aforo>
-    <id>49</id>
+<caseta id="49">
     <nombre>La Alacena</nombre>
-    <tipoCaseta>Comida y fiesta</tipoCaseta>
     <titular>Pedro Vargas</titular>
-</casetaFeria>
+    <aforo>170</aforo>
+    <tipoCaseta>Comida y fiesta</tipoCaseta>
+</caseta>

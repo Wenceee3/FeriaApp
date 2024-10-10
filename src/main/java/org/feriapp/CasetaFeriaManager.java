@@ -50,13 +50,13 @@ public class CasetaFeriaManager {
         System.out.println("Casetas leídas desde JSON.");
     }
 
-    public void loadCasetasFromFile(String filePath) {
+    public void cargarCasetasDelArchivo(String filePath) {
         try (Scanner scanner = new Scanner(new File(filePath))) {
-            int id = 1; // Empezamos el ID en 1
+            int id = 1;
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] data = line.split(" - ");
-                if (data.length == 4) { // Verificamos que haya 4 elementos
+                if (data.length == 4) {
                     CasetaFeria caseta = new CasetaFeria();
                     caseta.setId(id++);
                     caseta.setNombre(data[0].trim());
